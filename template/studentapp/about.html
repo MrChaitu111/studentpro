@@ -1,0 +1,43 @@
+{% extends 'studentapp/style.html' %}
+
+{% block title %}About | Student Management{% endblock %}
+
+{% block b %}
+<div class="container mt-5">
+    <div class="card shadow-lg p-5 border-0 rounded-4">
+        <h2 class="text-center text-dark fw-bold mb-4">About Student Management System</h2>
+
+        <p class="lead text-center text-secondary mb-4">
+            This Student Management System is a simple and efficient Django web application
+            designed to manage student details easily. It allows users to <strong>add</strong>,
+            <strong>view</strong>, <strong>edit</strong>, and <strong>delete</strong> student records with a clean,
+            user-friendly Bootstrap interface.
+        </p>
+
+        <div class="row mt-4 text-center">
+            <div class="col-md-4 mb-3">
+                <div class="card shadow-sm border-0 p-3 rounded-4 hover-dark">
+                    <h5 class="text-dark">📋 Manage Students</h5>
+                    <p class="text-muted">Add, edit, or remove students easily with simple forms.</p>
+                </div>
+            </div>
+            <div class="col-md-4 mb-3">
+                <div class="card shadow-sm border-0 p-3 rounded-4 hover-dark">
+                    <h5 class="text-dark">💾 Save Data Securely</h5>
+                    <p class="text-muted">All student information is safely stored in the database.</p>
+                </div>
+            </div>
+            <div class="col-md-4 mb-3">
+                <div class="card shadow-sm border-0 p-3 rounded-4 hover-dark">
+                    <h5 class="text-dark">💻 Easy to Use</h5>
+                    <p class="text-muted">Built using Django and Bootstrap for smooth user experience.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="text-center mt-4">
+            <a href="{% url 'back' %}" class="btn btn-outline-dark w-25 rounded-5 me-3 hover-btn">🏠 Go Back Home</a>
+        </div>
+    </div>
+</div>
+{% endblock %}

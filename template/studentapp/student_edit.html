@@ -1,0 +1,46 @@
+{% extends 'studentapp/style.html' %}
+
+{% block b %}
+<div class="container my-5">
+    <div class="card shadow-lg p-5 mx-auto" style="max-width: 700px;">
+        <h2 class="text-center mb-4 text-dark">Edit Student Details</h2>
+        <form method="POST">
+            {% csrf_token %}
+
+            {{ form.as_p }}
+            <div class="row">
+                <div class="col-md-6 mb-3">
+                    <label class="form-label fw-semibold">Student ID</label>
+                    <input type="number" name="student_id" class="form-control" value="{{ form.student_id.value }}" required>
+                </div>
+                <div class="col-md-6 mb-3">
+                    <label class="form-label fw-semibold">Name</label>
+                    <input type="text" name="student_name" class="form-control" value="{{ form.student_name.value }}" required>
+                </div>
+                <div class="col-md-6 mb-3">
+                    <label class="form-label fw-semibold">Age</label>
+                    <input type="number" name="student_age" class="form-control" value="{{ form.student_age.value }}" required>
+                </div>
+                <div class="col-md-6 mb-3">
+                    <label class="form-label fw-semibold">Date of Birth</label>
+                    <input type="date" name="student_date_birth" class="form-control" value="{{ form.student_date_birth.value }}" required>
+                </div>
+                <div class="col-md-6 mb-3">
+                    <label class="form-label fw-semibold">Email</label>
+                    <input type="email" name="student_email" class="form-control" value="{{ form.student_email.value }}" required>
+                </div>
+                <div class="col-md-6 mb-3">
+                    <label class="form-label fw-semibold">Address</label>
+                    <textarea name="student_address" class="form-control" rows="1" required>{{ form.student_address.value }}</textarea>
+                </div>
+            </div>
+
+            <div class="text-center mt-4">
+                <button type="submit" class="btn btn-outline-success w-25 me-3 rounded-5 hover-btn">Update</button>
+                <button type="reset" class="btn btn-outline-danger w-25 me-3 rounded-5 hover-btn">Reset</button>
+                <a href="{% url 'add_student' %}" class="btn btn-outline-dark w-25 rounded-5 hover-btn">Cancel</a>
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock b %}

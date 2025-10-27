@@ -1,0 +1,47 @@
+{% extends 'studentapp/style.html' %}
+
+{% block b %}
+<div class="container mt-5">
+    <!-- ===== Student Form Card ===== -->
+    <div class="card shadow p-4">
+        <h2 class="mb-4 text-center text-dark">Add Student Details</h2>
+
+        <form method="POST" class="mb-4">
+            {% csrf_token %}
+            <div class="row">
+                <div class="col-md-4 mb-3">
+                    <label class="form-label fw-semibold">Student ID</label>
+                    <input type="number" name="student_id" class="form-control" placeholder="Enter ID" required>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <label class="form-label fw-semibold">Name</label>
+                    <input type="text" name="student_name" class="form-control" placeholder="Enter Name" required>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <label class="form-label fw-semibold">Age</label>
+                    <input type="number" name="student_age" class="form-control" placeholder="Enter Age" required>
+                </div>
+
+                <div class="col-md-4 mb-3">
+                    <label class="form-label fw-semibold">Date of Birth</label>
+                    <input type="date" name="student_date_birth" class="form-control" required>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <label class="form-label fw-semibold">Email</label>
+                    <input type="email" name="student_email" class="form-control" placeholder="Enter Email" required>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <label class="form-label fw-semibold">Address</label>
+                    <textarea name="student_address" class="form-control" placeholder="Enter Address" rows="1" required></textarea>
+                </div>
+            </div>
+
+            <div class="text-center mt-3">
+                <button type="submit" class="btn btn-outline-success me-3  w-25 m-2 rounded-5 hover-btn">Submit</button>
+                <button type="reset" class="btn btn-outline-danger me-3 w-25 m-2 rounded-5 hover-btn">Reset</button>
+                <a href="{% url 'back' %}" class="btn btn-outline-dark me-3 w-25 m-2 rounded-5 hover-btn">Go Back</a>
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock %}

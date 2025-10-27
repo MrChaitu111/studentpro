@@ -1,0 +1,42 @@
+{% extends 'studentapp/style.html' %}
+
+{% block title %}Home | Student Management{% endblock %}
+
+{% block b %}
+<div class="container text-center mt-5">
+    <h1 class="fw-bold text-dark mb-4">🎓 Student Management System</h1>
+    <p class="text-muted mb-5">Manage student records easily — add, view, edit, and delete with one click.</p>
+
+    <div class="row justify-content-center g-4">
+        <!-- Add Student -->
+        <div class="col-md-3">
+            <div class="card shadow-lg border-0 rounded-4 p-4 h-100">
+                <h5 class="fw-semibold mb-3">Add Student</h5>
+                <p class="text-muted small mb-3">Add new student details into the system.</p>
+                <a href="{% url 'add_student' %}" class="btn btn-outline-dark me-3 hover-btn w-100 rounded-5">Add Student</a>
+            </div>
+        </div>
+
+        <!-- View Students -->
+        <div class="col-md-3">
+            <div class="card shadow-lg border-0 rounded-4 p-4 h-100">
+                <h5 class="fw-semibold mb-3">View Records</h5>
+                <p class="text-muted small mb-3">Check all students currently stored in the database.</p>
+                <a href="{% url 'view_students' %}" class="btn btn-outline-dark w-100 rounded-5 me-3 hover-btn">View Students</a>
+            </div>
+        </div>
+
+        <!-- About -->
+        <div class="col-md-3">
+            <div class="card shadow-lg border-0 rounded-4 p-4 h-100">
+                <h5 class="fw-semibold mb-3">About</h5>
+                <p class="text-muted small mb-3">Learn more about this student management project.</p>
+                <li class="mb-3 list-unstyled">
+                    <a href="{% url 'about' %}" class="btn btn-outline-dark w-100 rounded-5 text-decoration-none me-3 hover-btn">About</a>
+                </li>
+            </div>
+        </div>
+        
+    </div>
+</div>
+{% endblock %}
