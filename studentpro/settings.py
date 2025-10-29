@@ -12,13 +12,6 @@ https://docs.djangoproject.com/en/5.2/ref/settings/
 
 from pathlib import Path
 import os 
-
-
-
-from dotenv import load_dotenv
-load_dotenv()
-
-
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 TEMPLATE_DIR=os.path.join(BASE_DIR,'template')
@@ -29,20 +22,12 @@ STATIC_DIR =os.path.join(BASE_DIR,'static')
 # See https://docs.djangoproject.com/en/5.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-# SECRET_KEY = 'django-insecure-se(s%$)m+(1l*x)(y4wg1vi5f_ew-4tsqt2!!3isssigex5v_y'
+SECRET_KEY = 'django-insecure-se(s%$)m+(1l*x)(y4wg1vi5f_ew-4tsqt2!!3isssigex5v_y'
 
-# # SECURITY WARNING: don't run with debug turned on in production!
-# DEBUG = True
+# SECURITY WARNING: don't run with debug turned on in production!
+DEBUG = True
 
-# ALLOWED_HOSTS = ['*']
-
-
-SECRET_KEY = os.getenv('SECRET_KEY', 'fallback_secret_key')
-DEBUG = os.getenv('DEBUG', 'False') == 'True'
 ALLOWED_HOSTS = ['*']
-
-
-
 
 
 # Application definition
@@ -61,7 +46,6 @@ MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
-    'whitenoise.middleware.WhiteNoiseMiddleware', 
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
@@ -91,31 +75,16 @@ WSGI_APPLICATION = 'studentpro.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.2/ref/settings/#databases
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.mysql',
-#         'NAME': 'studentsdb',       # your database name
-#         'USER': 'root',            # your MySQL username
-#         'PASSWORD': 'admin', # your MySQL password
-#         'HOST': 'localhost',       # or your DB server IP
-#         'PORT': '3306',
-#     }
-# }
-
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': os.getenv('MYSQL_DATABASE', 'studentsdb'),
-        'USER': os.getenv('MYSQL_USER', 'root'),
-        'PASSWORD': os.getenv('MYSQL_PASSWORD', 'admin'),
-        'HOST': os.getenv('MYSQL_HOST', 'localhost'),
-        'PORT': os.getenv('MYSQL_PORT', '3306'),
-        'OPTIONS': {'charset': 'utf8mb4'},
+        'NAME': 'studentsdb',       # your database name
+        'USER': 'root',            # your MySQL username
+        'PASSWORD': 'admin', # your MySQL password
+        'HOST': 'localhost',       # or your DB server IP
+        'PORT': '3306',
     }
 }
-
-
-
 
 # Password validation
 # https://docs.djangoproject.com/en/5.2/ref/settings/#auth-password-validators
@@ -151,14 +120,9 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.2/howto/static-files/
 
-# STATIC_URL = '/static/'
-# STATICFILES=[STATIC_DIR]
 STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+STATICFILES=[STATIC_DIR]
 
-
-MEDIA_URL = '/media/'
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 
 # Default primary key field type
