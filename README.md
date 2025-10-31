@@ -98,5 +98,26 @@ The live app can be accessed at:
 
 ### 1️⃣ Clone Repository
 
-git clone https://github.com/<your-username>/studentpro.git
-cd studentpro
+git clone https://github.com/MrChaitu111/studentpro.git
+#####
+
+🧑‍💻 Developer
+
+👤 Name: Chaitanya D
+💼 Role: Django Developer | Python Full-Stack Enthusiast
+🌍 Location: India
+🔗 Portfolio: https://chaitanya511.pythonanywhere.com
+
+📧 Email: your-email@example.com
+
+🏷️ Tags
+
+django python mysql crud student-management-system fullstack pythonanywhere bootstrap webapp
+
+📜 License
+
+This project is released under the MIT License.
+You’re free to modify, distribute, or use it for educational purposes.
+
+
+
