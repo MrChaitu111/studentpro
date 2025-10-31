@@ -104,9 +104,10 @@ git clone https://github.com/MrChaitu111/studentpro.git
 🧑‍💻 Developer
 
 👤 Name: Chaitanya D
+
 💼 Role: Django Developer | Python Full-Stack Enthusiast
+
 🌍 Location: India
-🔗 Portfolio: https://chaitanya511.pythonanywhere.com
 
 📧 Email: your-email@example.com
 
