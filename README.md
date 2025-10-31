@@ -109,7 +109,7 @@ git clone https://github.com/MrChaitu111/studentpro.git
 
 🌍 Location: India
 
-📧 Email: your-email@example.com
+📧 Email: dchaitanya373@gmail.com
 
 🏷️ Tags
 
